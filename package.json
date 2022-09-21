@@ -1,0 +1,29 @@
+{
+  "name": "slack-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barot-sam/Slack-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Barot-sam/Slack-app/issues"
+  },
+  "homepage": "https://github.com/Barot-sam/Slack-app#readme",
+  "dependencies": {
+    "@slack/bolt": "^3.12.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.2",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
