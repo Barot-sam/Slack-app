@@ -12,11 +12,7 @@ exports.slhMemebiz = asyncHandler(async ({ say, ack, respond, body }) => {
         const meme = getrdmMeme();
         console.log('body :- ', body);
         const photoModel = slkPhoto(meme);
-        const res = await respond(slackModel(photoModel, slkActionBtn));
-        // const res = await respond({
-        //     "response_type": "ephemeral",
-        //     "text": "Sorry, slash commando, that didn't work. Please try again."
-        // });
+        await respond(slackModel(photoModel, slkActionBtn));
     }
     catch (error) {
         console.log("error", error);
