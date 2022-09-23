@@ -4,6 +4,8 @@ const slackModel = require('../../models/slkModel');
 const slkPhoto = require('../../models/slkPhoto');
 const slkActionBtn = require('../../models/slkActionBtn');
 
+let meme = getrdmMeme();
+
 exports.sendMeme = asyncHandler(
     async (req) => {
 
@@ -12,23 +14,23 @@ exports.sendMeme = asyncHandler(
             token: req.token,
             user: req.body.user.id
         }).then(({ user }) => user)
-        console.log('user', req);
-        console.log('user', user);
+
+        await req.respond({
+            delete_original: true
+        });
+        const photoModel = slkPhoto(meme);
         await req.client.chat.postMessage({
             channel: req.body.channel.id,
             icon_url: user.profile.image_original,
             username: user.name,
-            text: user.name
+            ...slackModel(photoModel)
         })
-        // await req.respond({
-        //     delete_original: true
-        // })
     }
 )
 
 exports.suffelMeme = asyncHandler(
     async (req) => {
-        const meme = getrdmMeme();
+        meme = getrdmMeme();
 
         const photoModel = slkPhoto(meme);
         await req.respond({
