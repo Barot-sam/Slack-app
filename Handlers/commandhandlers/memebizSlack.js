@@ -4,19 +4,19 @@ const slkPhoto = require('../../models/slkPhoto');
 const slkActionBtn = require('../../models/slkActionBtn');
 const { getrdmMeme } = require('../randomMemes/getrdmMeme');
 
-exports.slhMemebiz = asyncHandler(async ({ say, ack, respond }) => {
+exports.slhMemebiz = asyncHandler(async ({ say, ack, respond, body }) => {
     // Acknowledge the command request
     await ack();
 
     try {
         const meme = getrdmMeme();
+        console.log('body :- ', body);
         const photoModel = slkPhoto(meme);
         const res = await respond(slackModel(photoModel, slkActionBtn));
         // const res = await respond({
         //     "response_type": "ephemeral",
         //     "text": "Sorry, slash commando, that didn't work. Please try again."
         // });
-        console.log("res", res);
     }
     catch (error) {
         console.log("error", error);

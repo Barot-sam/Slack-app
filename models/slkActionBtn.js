@@ -10,7 +10,7 @@ const slkActionBtn = {
             },
             "style": "primary",
             "value": "click_me_123",
-            "action_id": "send_gif"
+            "action_id": "send_meme"
         },
         {
             "type": "button",
@@ -20,7 +20,7 @@ const slkActionBtn = {
                 "emoji": false
             },
             "value": "click_me_123",
-            "action_id": "shuffel_gif"
+            "action_id": "shuffel_meme"
         },
         {
             "type": "button",
@@ -30,7 +30,7 @@ const slkActionBtn = {
                 "emoji": false
             },
             "value": "click_me_123",
-            "action_id": "cancle_gif"
+            "action_id": "cancle_meme"
         }
     ]
 }
